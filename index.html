@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-qb-installed="true">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <title>Geometry genius</title>
+   
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1267.0" data-gr-ext-installed="">
+    <header>
+        <nav class="m-0 lg:m-12 py-5 px-10 flex flex-col lg:flex-row bg-[#108fd834] rounded-lg">
+            <div class="flex-1">
+                <h1 class=" font-bold text-5xl text-[#111111cf]">
+                    Interactive
+                </h1>
+                <span class="text-3xl text-[#777474]"> Geometry Genius</span>
+            </div>
+            <a href="/blog"><button
+                    class="py-4 px-9 font-bold text-xl text-white rounded-lg bg-[#1090D8]">Blog</button></a>
+        </nav>
+    </header>
+    <main class="m-12 flex flex-col lg:flex-row gap-4 lg:gap-6 items-center justify-center">
+        <section class="leftside lg:flex-1 grid lg:grid-cols-3 gap-6 text-[#414141]">
+            <div class="px-2 py-5 flex flex-col rounded-lg  gap-5 border border-gray-500 items-center justify-center">
+                <img class="w-[243px] h-[194px]" src="images/triangle.png" alt="">
+                <h2 class="font-bold text-2xl text-[#414141]">Triangle</h2>
+                <p>Area (A) = 0.5 x b x h</p>
+                <div class="flex gap-2">
+                    <input id="triangle_b" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" placeholder="b"
+                        min="1" required=""><span>cm</span>
+                    <input id="triangle_h" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" placeholder="h"
+                        min="1" required=""><span>cm</span><br>
+                </div>
+                <button onclick="triangle()"
+                    class="py-4 px-24 text-white font-bold bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <div class="px-2 py-5 flex flex-col rounded-lg  gap-5 border border-gray-500 items-center justify-center">
+                <img class="w-[243px] h-[194px]" src="images/rectangle.png" alt="">
+                <h2 class="font-bold text-2xl text-[#414141]">Rectangle</h2>
+                <p>Area (A) = w x l</p>
+                <div class="flex gap-2">
+                    <input id="ractangle_w" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="w"><span>cm</span>
+                    <input id="ractangle_l" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="l"><span>cm</span><br>
+                </div>
+                <button onclick="ractangle()"
+                    class="py-4 px-24 text-white font-bold bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <div class="px-2 py-5 flex flex-col rounded-lg  gap-5 border border-gray-500 items-center justify-center">
+                <img class="w-[243px] h-[194px]" src="images/parallelogram.png" alt="">
+                <h2 class="font-bold text-2xl text-[#414141]">Parallelogram</h2>
+                <p>Area (A) = b x h</p>
+                <div class="flex gap-2">
+                    <input id="parallelogram_b" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="b"><span>cm</span>
+                    <input id="parallelogram_h" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="h"><span>cm</span><br>
+                </div>
+                <button onclick="parallelogram()"
+                    class="py-4 px-24 text-white font-bold bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <div class="px-2 py-5 flex flex-col rounded-lg  gap-5 border border-gray-500 items-center justify-center">
+                <img class="w-[243px] h-[194px]" src="images/rhombus.png" alt="">
+                <h2 class="font-bold text-2xl text-[#414141]">Rhombus</h2>
+                <p>Area (A) = 0.5 x d<sub>1</sub> x d<sub>1</sub></p>
+                <div class="flex gap-2">
+                    <input id="rhombus_d1" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="d1"><span>cm</span>
+                    <input id="rhombus_d2" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="d2"><span>cm</span><br>
+                </div>
+                <button onclick="rhombus()"
+                    class="py-4 px-24 text-white font-bold bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <div class="px-2 py-5 flex flex-col rounded-lg  gap-5 border border-gray-500 items-center justify-center">
+                <img class="w-[243px] h-[194px]" src="images/pentagon.png" alt="">
+                <h2 class="font-bold text-2xl text-[#414141]">Pentagon</h2>
+                <p>Area (A) = 0.5 x p x b</p>
+                <div class="flex gap-2">
+                    <input id="pentagon_p" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="p"><span>cm</span>
+                    <input id="pentagon_b" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="b"><span>cm</span><br>
+                </div>
+                <button onclick="pentagon()"
+                    class="py-4 px-24 text-white font-bold bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <div class="px-2 py-5 flex flex-col rounded-lg  gap-5 border border-gray-500 items-center justify-center">
+                <img class="w-[243px] h-[194px]" src="images/ellipse.png" alt="">
+                <h2 class="font-bold text-2xl text-[#414141]">Ellipse</h2>
+                <p>Area (A) = πab </p>
+                <div class="flex gap-2">
+                    <input id="ellipse_a" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="a"><span>cm</span>
+                    <input id="ellipse_b" class="bg-[#F1F1F1] rounded w-24 py-1 px-3" type="number" min="1"
+                        placeholder="b"><span>cm</span><br>
+                </div>
+                <button onclick="ellipse()"
+                    class="py-4 px-24 text-white font-bold bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+        </section>
+        <section class="rightside">
+            <div
+                class="px-2 py-5 flex flex-col rounded-lg w-[320px] lg:w-[437px] h-fit lg:min-h-[454.2px] gap-5 border border-gray-500 items-center justify-center">
+                <h2 class="font-bold text-2xl text-[#414141] underline">Area Calculation</h2>
+                <div id="result">
+                    <ol id="area" class="list-decimal space-y-5">
+                        <!-- <li class="space-x-4"> <span>Triangle</span> <span></span><span>cm<sup>2</sup></span><button onclick="" class="py-2 px-4 text-white font-bold bg-[#1090D8] rounded-lg">Convert to m<sup>2</sup></button></li> -->
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function triangle() {
+            let tri_b = document.getElementById("triangle_b").value;
+            let tri_h = document.getElementById("triangle_h").value;
+            if ((tri_b != null) && (tri_h != null)) {
+                return output('Triangle', 0.5, tri_b, tri_h);
+            }
+            else {
+                return "please enter positive numbers";
+            }
+
+        }
+
+        function ractangle() {
+            let ract_w = document.getElementById("ractangle_w").value;
+            let ract_l = document.getElementById("ractangle_l").value;
+            if (ract_w == 0 && ract_l == 0) {
+                return "please enter the values";
+            }
+            else if (ract_w < 0 && ract_l < 0) {
+                return "please enter positive numbers";
+            }
+            else {
+                return output('Rectangle', 1, ract_w, ract_l);
+
+            }
+        }
+        function parallelogram() {
+            let paral_b = document.getElementById("parallelogram_b").value;
+            let paral_h = document.getElementById("parallelogram_h").value;
+            if (paral_b == null && paral_h == null) {
+                return "please enter the values";
+            }
+            else if (paral_b < 0 && paral_h < 0) {
+                return "please enter positive numbers";
+            }
+            else {
+                return output('Parallelogram', 1, paral_b, paral_h);
+            }
+        }
+        function rhombus() {
+            let rhom_d1 = document.getElementById("rhombus_d1").value;
+            let rhom_d2 = document.getElementById("rhombus_d2").value;
+            if (rhom_d1 == null && rhom_d2 == null) {
+                return "please enter the values";
+            }
+            else if (rhom_d1 < 0 && rhom_d2 < 0) {
+                return "please enter positive numbers";
+            }
+            else {
+                return output('Rhombus', 0.5, rhom_d1, rhom_d2);
+            }
+        }
+        function pentagon() {
+            let pen_p = document.getElementById("pentagon_p").value;
+            let pen_b = document.getElementById("pentagon_b").value;
+            if (pen_p == null && pen_b == null) {
+                return "please enter the values";
+            }
+            else if (pen_p < 0 && pen_b < 0) {
+                return "please enter positive numbers";
+            }
+            else {
+                return output('Pentagon', 0.5, pen_p, pen_b);
+            }
+        }
+        function ellipse() {
+            let ell_a = document.getElementById("ellipse_a").value;
+            let ell_b = document.getElementById("ellipse_b").value;
+            if (ell_a == null && ell_b == null) {
+                return "please enter the values";
+            }
+            else if (ell_a < 0 && ell_b < 0) {
+                return "please enter positive numbers";
+            }
+            else {
+                return output('Ellipse', 3.14, ell_a, ell_b);
+            }
+        }
+
+        function output(name, param1, param2, param3) {
+            let result = param1 * param2 * param3;
+            const node1 = document.createElement("li");
+            node2 = document.createElement('span');
+            node3 = document.createElement('sup');
+            node4 = document.createElement('button');
+            node1.classList.add("space-x-4");
+
+            node1.innerHTML = "<span> " + name + "</span> <span>" + result + "</span><span>cm<sup>2</sup></span><button  class='py-2 px-4 text-white font-bold bg-[#1090D8] rounded-lg'>Convert to m<sup>2</sup></button></li>"
+
+            document.getElementById(
+                "area").appendChild(node1);
+        }
+    </script>
+
+
+</body>
+</html>
